@@ -56,12 +56,6 @@ permalink: "/contact/"
                 <!--Email-->
                 <span class="cs-header">Email</span>
                 <a class="cs-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
-                <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{ client.address.mapLink }}">
-                    {{ client.address.city }}, {{ client.address.state }}
-                    {{ client.address.zip }}
-                </a>
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">
                     <!--Mobile Image-->
@@ -76,7 +70,7 @@ permalink: "/contact/"
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/ApexPhotos.webp" | resize({ width: 1084, height: 1156 }) | avif %}" type="image/avif">
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | webp %}" type="image/webp">
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/ApexPhotos.webp" | resize({ width: 1084, height: 1156 }) | jpeg %}" alt="building" width="542" height="578" decoding="async">
+                    <img src="{% getUrl "/assets/images/ApexPhotos.webp" | resize({ width: 1084, height: 1156 }) | jpeg %}" alt="website" width="542" height="578" decoding="async">
                 </picture>
             </div>
         </div>
