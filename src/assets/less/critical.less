@@ -20,6 +20,7 @@
         /* prevents overflow from the arrow graphic */
         overflow: hidden;
 
+
         &:before {
             /* black bar */
             content: "";
@@ -33,6 +34,7 @@
             bottom: 0;
             left: 0;
         }
+
 
         .cs-container {
             width: 100%;
@@ -78,18 +80,11 @@
             line-height: 1.2em;
             width: 100%;
             max-width: 17ch;
-            margin: 0 0 1rem; /* fixed your (16/16rem) to a valid unit */
+            margin: 0 0 1rem; /* replace (16/16rem) with 1rem */
             color: var(--headerColor);
             position: relative;
         }
-        
-        h1 {
-            font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
-            font-weight: 900;
-            line-height: 1.2em;
-            margin: 0 0 1rem;
-            color: var(--headerColor);
-        }
+
 
 
 
