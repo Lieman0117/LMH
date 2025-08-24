@@ -70,17 +70,19 @@
             display: block;
         }
 
-        .cs-title {
-            /* 39px - 61px */
+        h1.cs-title,
+        section h1.cs-title,
+        article h1.cs-title {
             font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
             font-weight: 900;
             line-height: 1.2em;
             width: 100%;
             max-width: 17ch;
-            margin: 0 0 (16/16rem);
+            margin: 0 0 1rem; /* fixed your (16/16rem) to a valid unit */
             color: var(--headerColor);
             position: relative;
         }
+
 
         .cs-text {
             font-size: (20/16rem);
