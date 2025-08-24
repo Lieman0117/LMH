@@ -7,8 +7,6 @@ permalink: "/about/"
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}"/>
     <link rel="stylesheet" href="/assets/css/about.css">
 {% endblock %}
 
@@ -21,13 +19,6 @@ permalink: "/about/"
 
 <section id="sbs-1278">
     <div class="cs-container">
-        <picture class="cs-picture">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="/assets/images/lhdevshot-m.webp">
-            <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="/assets/images/lhdevshot.webp">
-            <img loading="lazy" decoding="async" src="/assets/images/lhdevshot.webp" alt="construction" width="738" height="598">
-        </picture>
         <div class="cs-content">
             <br>
             <br>
