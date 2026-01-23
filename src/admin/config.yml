@@ -9,6 +9,8 @@ backend:
 # Keep this to allow you to edit the cms locally
 local_backend: true
 
+publish_mode: editorial_workflow
+
 # change url to a link to the image you want to use, no file paths, must be a URL
 logo_url: https://codestitch.app/frontend/images/logo.png
 
