@@ -3,9 +3,20 @@ permalink: /robots.txt
 layout: null
 eleventyExcludeFromCollections: true
 ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 User-agent: *
 Disallow: /admin/
 Allow: /
 
 Sitemap: {{ client.domain }}/sitemap.xml
- 

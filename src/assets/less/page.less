@@ -1,0 +1,479 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// PAGE STYLES - Shared styles for interior content pages (pricing, comparisons)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/*-- -------------------------- -->
+<---    Compare Cards Section   -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    .cs-compare-links-section {
+        padding: var(--sectionPadding);
+        background-color: #1a1a1a;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: (40/16rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+
+            .cs-topper { color: var(--primary); }
+
+            .cs-title,
+            .cs-text { color: var(--bodyTextColorWhite); }
+
+            .cs-text { opacity: 0.8; }
+        }
+
+        .cs-compare-cards {
+            width: 100%;
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: (24/16rem);
+        }
+
+        .cs-compare-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--primary);
+            border-radius: (8/16rem);
+            padding: (28/16rem) (24/16rem);
+            display: flex;
+            flex-direction: column;
+            gap: (12/16rem);
+        }
+
+        .cs-compare-card-title {
+            font-size: (18/16rem);
+            font-weight: 700;
+            color: var(--bodyTextColorWhite);
+            display: block;
+        }
+
+        .cs-compare-card-text {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            color: rgba(250, 251, 252, 0.7);
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .cs-compare-card-link {
+            font-size: (14/16rem);
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            margin-top: (4/16rem);
+
+            &:hover { text-decoration: underline; }
+        }
+    }
+}
+
+/* Tablet - 600px */
+@media only screen and (min-width: 37.5rem) {
+    .cs-compare-links-section {
+        .cs-compare-cards {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---       Page Header          -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    .cs-page-header {
+        padding: clamp(7rem, 14vw, 9rem) (16/16rem) clamp(3rem, 5vw, 4rem);
+        background-color: #1a1a1a;
+        text-align: center;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+        }
+
+        .cs-int-title {
+            font-size: clamp(1.9375rem, 3.9vw, 3.0625rem);
+            font-weight: 900;
+            color: var(--bodyTextColorWhite);
+            display: block;
+            margin-bottom: (12/16rem);
+        }
+
+        .cs-breadcrumbs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: (8/16rem);
+        }
+
+        .cs-link {
+            font-size: (14/16rem);
+            color: rgba(250, 251, 252, 0.65);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: (8/16rem);
+
+            &::after {
+                content: "›";
+                color: rgba(250, 251, 252, 0.35);
+            }
+
+            &:last-of-type {
+                color: var(--primary);
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---     Comparison Table       -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    .cs-comparison-section {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (960/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (40/16rem);
+        }
+
+        .cs-content {
+            text-align: left;
+            width: 100%;
+        }
+
+        .cs-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: (8/16rem);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .cs-compare-table {
+            width: 100%;
+            min-width: (480/16rem);
+            border-collapse: collapse;
+            font-size: (15/16rem);
+            line-height: 1.5em;
+
+            th,
+            td {
+                padding: (14/16rem) (18/16rem);
+                text-align: left;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+                vertical-align: top;
+                color: var(--bodyTextColor);
+            }
+
+            thead th {
+                background-color: var(--primary);
+                color: #fff;
+                font-weight: 700;
+                font-size: (14/16rem);
+                letter-spacing: 0.03em;
+
+                &:first-child {
+                    background-color: var(--secondary);
+                }
+            }
+
+            tbody tr:last-child td {
+                border-bottom: none;
+            }
+
+            tbody tr:nth-child(even) td {
+                background-color: #f7f9f8;
+            }
+
+            td:first-child {
+                font-weight: 600;
+                color: var(--headerColor);
+            }
+
+            .cs-good {
+                color: #2e7d4f;
+                font-weight: 700;
+            }
+
+            .cs-bad {
+                color: #b71c1c;
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---   Better Choice Section    -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    .cs-better-section {
+        padding: var(--sectionPadding);
+        background-color: #f0f4f1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (960/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (16/16rem);
+        }
+
+        .cs-better-list {
+            list-style: disc;
+            padding-left: (24/16rem);
+            display: flex;
+            flex-direction: column;
+            gap: (10/16rem);
+            margin-top: (8/16rem);
+        }
+
+        .cs-better-li {
+            font-size: var(--bodyFontSize);
+            line-height: 1.6em;
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---     Pricing Detail Card    -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    .cs-pricing-section {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (860/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: (48/16rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .cs-no-fee {
+            font-size: (14/16rem);
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-top: (8/16rem);
+            display: block;
+        }
+
+        .cs-card {
+            width: 100%;
+            max-width: (540/16rem);
+            border: 2px solid var(--primary);
+            border-radius: (10/16rem);
+            padding: clamp(2rem, 5vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: (24/16rem);
+        }
+
+        .cs-price-block {
+            display: flex;
+            align-items: flex-start;
+            gap: (4/16rem);
+            line-height: 1;
+        }
+
+        .cs-dollar {
+            font-size: (28/16rem);
+            font-weight: 700;
+            color: var(--headerColor);
+            margin-top: (10/16rem);
+        }
+
+        .cs-price {
+            font-size: (72/16rem);
+            font-weight: 900;
+            color: var(--headerColor);
+            line-height: 1;
+        }
+
+        .cs-per {
+            font-size: (18/16rem);
+            color: var(--bodyTextColor);
+            align-self: flex-end;
+            margin-bottom: (8/16rem);
+        }
+
+        .cs-card-label {
+            font-size: (18/16rem);
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .cs-features {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: (12/16rem);
+            text-align: left;
+        }
+
+        .cs-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: (10/16rem);
+            font-size: var(--bodyFontSize);
+            color: var(--bodyTextColor);
+            line-height: 1.4em;
+        }
+
+        .cs-check-icon {
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: (2/16rem);
+        }
+
+        .cs-disclaimer {
+            font-size: (13/16rem);
+            color: var(--bodyTextColor);
+            opacity: 0.65;
+            text-align: center;
+            font-style: italic;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---    FAQ Accordion (details) -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    .cs-faq-section {
+        padding: var(--sectionPadding);
+        background-color: #f7f9f8;
+
+        .cs-container {
+            width: 100%;
+            max-width: (860/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (40/16rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .cs-faq-list {
+            width: 100%;
+            list-style: none;
+        }
+
+        .cs-faq-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            &:first-child {
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        summary.cs-question {
+            padding: (20/16rem) 0;
+            font-size: (16/16rem);
+            font-weight: 700;
+            color: var(--headerColor);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: (16/16rem);
+            font-family: var(--bodyFont);
+
+            &::-webkit-details-marker {
+                display: none;
+            }
+
+            &::after {
+                content: "+";
+                font-size: (22/16rem);
+                color: var(--primary);
+                flex-shrink: 0;
+                line-height: 1;
+            }
+        }
+
+        details[open] summary.cs-question::after {
+            content: "−";
+        }
+
+        .cs-answer {
+            font-size: var(--bodyFontSize);
+            line-height: 1.6em;
+            color: var(--bodyTextColor);
+            padding-bottom: (20/16rem);
+        }
+    }
+}
+
+
+/*-- -------------------------- -->
+<---   Hero Disambig Text       -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    #hero-1203 {
+        .cs-disambig {
+            font-size: (13/16rem);
+            line-height: 1.5em;
+            color: var(--bodyTextColor);
+            font-style: italic;
+            opacity: 0.75;
+            margin-top: -(8/16rem);
+            margin-bottom: (16/16rem);
+            text-align: center;
+            width: 100%;
+            max-width: (600/16rem);
+        }
+    }
+}
