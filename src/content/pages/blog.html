@@ -24,10 +24,6 @@ permalink: "/blog/"
                 <a href="/blog/" class="cs-link cs-active">Blog</a>
             </div>
         </div>
-        <!--Background Image-->
-        <picture class="cs-background">
-
-        </picture>
     </div>
 
     <!-- ============================================ -->
@@ -54,12 +50,12 @@ permalink: "/blog/"
                             <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | avif %}" type="image/avif">
                             <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | webp %}" type="image/webp">
                             <source media="(min-width: 1024px)" srcset="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" type="image/jpeg">
-                            <img src="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" alt="{{ post.data.alt }}" width="824" height="400" decoding="async">
+                            <img src="{% getUrl post.data.image | resize({ width: 1648, height: 800 }) | jpeg %}" alt="{{ post.data.alt }}" width="824" height="400" loading="lazy" decoding="async">
                         </picture>
                         <div class="cs-article-group">
                             <div class="cs-author-group">
                                 <picture class="cs-author-img">
-                                    <img src="/assets/svgs/profile.svg" alt="Profile icon" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true"/>
+                                    <img src="/assets/svgs/profile.svg" alt="" width="32" height="32" decoding="async" loading="lazy" aria-hidden="true"/>
                                 </picture>
                                 <span class="cs-author-name">{{ post.data.author }}</span>
                                 <span aria-hidden="true" class="cs-dot"></span>

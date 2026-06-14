@@ -211,18 +211,18 @@
         }
 
         .cs-picture {
-            /* 545px - 866px, scales with viewport so it never overflows the section */
-            width: clamp(34.0625rem, 42vw, 54.125rem);
-            height: auto;
-            margin-left: 0;
+            width: (866/16rem);
+            height: (842/16rem);
             position: absolute;
             right: 0;
             bottom: 0;
 
             img {
+                bottom: 0;
+                right: 0;
                 width: 100%;
-                height: auto;
-                position: relative;
+                height: 100%;
+                position: absolute;
                 object-fit: contain;
             }
         }
