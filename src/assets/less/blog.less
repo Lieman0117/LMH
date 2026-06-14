@@ -160,40 +160,6 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #blog-sidebar {
-            .cs-sidebar-header,
-            .cs-toc-link,
-            .cs-sidebar-title,
-            .cs-sidebar-date {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-sidebar-date {
-                opacity: 0.8;
-            }
-
-            .cs-sidebar-header {
-                &::after {
-                    background-color: var(--bodyTextColorWhite);
-                }
-            }
-
-            .cs-toc-item {
-                &.cs-active {
-                    border-color: var(--secondary);
-
-                    .cs-toc-link {
-                        color: var(--secondary);
-                    }
-                }
-            }
-        }
-    }
-}
-
 /*-- -------------------------- -->
 <---        Blog Listing        -->
 <--- -------------------------- -*/
@@ -321,26 +287,6 @@
 
         .cs-article-title {
             max-width: (550/16rem);
-        }
-    }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #blog-listing {
-            .cs-article-title,
-            .cs-author-name,
-            .cs-date,
-            .cs-article-desc {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-author-name,
-            .cs-date,
-            .cs-article-desc {
-                opacity: 0.8;
-            }
         }
     }
 }
@@ -532,30 +478,3 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #single-article {
-            .cs-article-group,
-            .cs-article-content {
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6,
-                p,
-                span,
-                li {
-                    color: var(--bodyTextColorWhite);
-                }
-
-                p,
-                span,
-                li {
-                    opacity: 0.8;
-                }
-            }
-        }
-    }
-}

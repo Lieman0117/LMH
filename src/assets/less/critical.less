@@ -236,27 +236,6 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #hero-1203 {
-            &:before {
-                background-color: rgba(0, 0, 0, 0.6);
-            }
-            .cs-topper {
-                color: var(--primaryLight);
-            }
-            .cs-title {
-                color: var(--bodyTextColorWhite);
-            }
-            .cs-text {
-                color: var(--bodyTextColorWhite);
-                opacity: 0.9;
-            }
-        }
-    }
-}
-
                                 
 /*-- -------------------------- -->
 <---          Services          -->
@@ -352,41 +331,6 @@
 
         .cs-item {
             width: 31%;
-        }
-    }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #services-597 {
-            .cs-content {
-                &:before {
-                    /* makes it 40% darker */
-                    filter: brightness(60%);
-                }
-            }
-            .cs-card-group {
-                background-color: var(--medium);
-            }
-
-            .cs-topper,
-            .cs-title,
-            .cs-text,
-            .cs-h3,
-            .cs-item-text {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-item-text,
-            .cs-text {
-                opacity: 0.8;
-            }
-
-            .cs-icon {
-                /* turns it white */
-                filter: grayscale(1) brightness(1000%);
-            }
         }
     }
 }

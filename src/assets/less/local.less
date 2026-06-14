@@ -144,37 +144,6 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #services-884 {
-            .cs-topper {
-                color: var(--primaryLight);
-            }
-            .cs-title,
-            .cs-text,
-            .cs-h3,
-            .cs-item-p {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-floater {
-                opacity: 0.4;
-            }
-
-            .cs-text,
-            .cs-item-p {
-                opacity: 0.8;
-            }
-
-            .cs-item {
-                background-color: fade(#000, 20%);
-            }
-        }
-    }
-}
-
-
 /*-- -------------------------- -->
 <---          Services          -->
 <--- -------------------------- -*/
@@ -346,34 +315,6 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #services-564 {
-            .cs-topper {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-color {
-                color: var(--primaryLight);
-            }
-            .cs-title,
-            .cs-text,
-            .cs-h3,
-            .cs-li {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-text {
-                opacity: 0.8;
-            }
-
-            .cs-icon {
-                filter: brightness(150%);
-            }
-        }
-    }
-}
                                 
 
 /*-- -------------------------- -->
@@ -631,10 +572,6 @@
             left: (0/16rem);
             z-index: -1;
         }
-
-        .cs-dark {
-            display: none;
-        }
     }
 }
 
@@ -697,36 +634,264 @@
     }
 }
 
-/* Dark Mode */
+/*-- -------------------------- -->
+<---       Why Hand-Coded       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #pricing-1790 {
-            background-color: rgba(0, 0, 0, .2);
-            .cs-item {
-                background-color: rgba(0, 0, 0, .2);
+    #why-1203 {
+        padding: var(--sectionPadding);
+        background-color: #f7f7f7;
+        overflow: hidden;
 
-                &.cs-popular {
-                    background-color: rgba(0, 0, 0, .6);
-                }
-            }
+        .cs-container {
+            width: 100%;
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
 
-            .cs-package, .cs-price, .cs-frequency, .cs-item-text, .cs-li {
-                color: var(--bodyTextColorWhite);
-            }
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            max-width: (522/16rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-            .cs-package, .cs-frequency, .cs-item-text, .cs-li {
-                opacity: .8;
-            }
+        .cs-card-group {
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 2vw, 1.25rem);
+        }
 
-            .cs-light {
-                display: none;
-            }
+        .cs-item {
+            list-style: none;
+            text-align: left;
+            margin: 0;
+            /* 24px - 32px left & right */
+            padding: (32/16rem) clamp(1.5rem, 2vw, 2rem);
+            border-radius: (16/16rem);
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            grid-column: span 4;
+        }
 
-            .cs-dark {
-                display: block;
-            }
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-item-p {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
         }
     }
 }
-                                
-                                
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #why-1203 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 2;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #why-1203 {
+        .cs-item {
+            grid-column: span 1;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---    Built for Tradespeople  -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #trades-1203 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            max-width: (522/16rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: (24/16rem) (16/16rem);
+            border-radius: (16/16rem);
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-column: span 4;
+        }
+
+        .cs-h3 {
+            font-size: (18/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--headerColor);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #trades-1203 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 2;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #trades-1203 {
+        .cs-item {
+            grid-column: span 1;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---         Testimonial        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #testimonial-1203 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-card-group {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-width: (700/16rem);
+            display: flex;
+            justify-content: center;
+        }
+
+        .cs-item {
+            text-align: center;
+            list-style: none;
+            width: 100%;
+            /* Padding L & R - 16px - 32px */
+            padding: clamp(2rem, 5.4vw, 2.5rem) clamp(1rem, 3.2vw, 2rem);
+            box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
+            border-radius: (4/16rem);
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* prevents padding from affecting height & width */
+            box-sizing: border-box;
+        }
+
+        .cs-item-img {
+            width: (80/16rem);
+            height: (80/16rem);
+            margin-bottom: (16/16rem);
+            border-radius: 50%;
+        }
+
+        .cs-item-stars {
+            width: (96/16rem);
+            height: (16/16rem);
+            margin-bottom: (16/16rem);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            margin: 0 0 (16/16rem);
+            color: var(--bodyTextColor);
+        }
+
+        .cs-name {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            font-weight: 700;
+            color: var(--headerColor);
+        }
+    }
+}
+
+
