@@ -759,30 +759,34 @@
 
         .cs-card-group {
             width: 100%;
+            max-width: (900/16rem);
             margin: 0;
             padding: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            /* 16px - 20px */
-            gap: clamp(1rem, 2vw, 1.25rem);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* 12px - 16px */
+            gap: clamp(0.75rem, 2vw, 1rem);
         }
 
         .cs-item {
             list-style: none;
             text-align: center;
             margin: 0;
-            padding: (24/16rem) (16/16rem);
-            border-radius: (16/16rem);
-            background-color: #f7f7f7;
+            /* min 44px touch target height */
+            min-height: (44/16rem);
+            padding: (10/16rem) (24/16rem);
+            border-radius: (100/16rem);
+            border: 1px solid var(--primary);
+            background-color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            grid-column: span 4;
         }
 
         .cs-h3 {
-            font-size: (18/16rem);
-            line-height: 1.2em;
+            font-size: (16/16rem);
+            line-height: 1.5em;
             font-weight: 700;
             margin: 0;
             color: var(--headerColor);
@@ -795,19 +799,6 @@
     #trades-1203 {
         .cs-container {
             max-width: (1280/16rem);
-        }
-
-        .cs-item {
-            grid-column: span 2;
-        }
-    }
-}
-
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-    #trades-1203 {
-        .cs-item {
-            grid-column: span 1;
         }
     }
 }
@@ -863,13 +854,6 @@
             align-items: center;
             /* prevents padding from affecting height & width */
             box-sizing: border-box;
-        }
-
-        .cs-item-img {
-            width: (80/16rem);
-            height: (80/16rem);
-            margin-bottom: (16/16rem);
-            border-radius: 50%;
         }
 
         .cs-item-stars {
