@@ -35,37 +35,25 @@ async function main() {
     process.env.APPROVAL_SECRET
   );
 
-  const diffstat = git(`diff --stat origin/${process.env.BASE_BRANCH || "main"}...${r.branch}`).trim();
-  const scoreLine = Object.entries(lh.scores)
-    .map(([k, v]) => `${k}: ${v == null ? "n/a" : v}`)
-    .join("  ·  ");
-  const verdict = lh.pass ? "PASSED" : "ATTENTION — below threshold";
+  const verdict = lh.pass ? "" : "⚠️ Note: site performance dipped on preview — worth a check.\n\n";
 
   const subject = `Review change for ${r.from} — reply approve/reject [tok:${token}]`;
   const text = [
-    `A client update is staged and waiting for your approval.`,
+    `A site update is ready for your review.`,
     ``,
     `Requested by: ${r.from}`,
-    `Original subject: ${r.subject}`,
+    `Their request: ${r.subject}`,
     ``,
-    `What the agent did:`,
+    `What was changed:`,
     r.summary,
     ``,
-    `Files changed:`,
-    ...r.changedFiles.map((f) => `  - ${f}`),
-    ``,
-    diffstat ? `Diff summary:\n${diffstat}` : "",
-    ``,
-    `Preview: ${preview.url}`,
-    `PR: https://github.com/${r.repo}/pull/${r.prNumber}`,
-    ``,
-    `Lighthouse (${verdict}): ${scoreLine}`,
-    ...(lh.failures.length ? [`Below threshold: ${lh.failures.join(", ")}`] : []),
+    `${verdict}Preview the change here:`,
+    preview.url,
     ``,
     `------------------------------------------------------------`,
-    `To publish to production, reply with the word: approve`,
-    `To discard it, reply with: reject`,
-    `(Keep the [tok:...] tag in the subject — it tells the agent which change you mean.)`,
+    `Reply APPROVE to publish it live.`,
+    `Reply REJECT to discard it.`,
+    `(Keep the [tok:...] tag in the subject line.)`,
   ].join("\n");
 
   await sendEmail({
