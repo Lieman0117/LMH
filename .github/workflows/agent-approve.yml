@@ -1,0 +1,30 @@
+name: LMH agent — approve
+
+on:
+  repository_dispatch:
+    types: [lmh-owner-approval]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Merge or discard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPROVAL_SECRET: ${{ secrets.APPROVAL_SECRET }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          OWNER_EMAIL: ${{ secrets.OWNER_EMAIL }}
+          FROM_EMAIL: ${{ vars.FROM_EMAIL }}
+          APPROVAL_TOKEN: ${{ github.event.client_payload.token }}
+          DECISION: ${{ github.event.client_payload.decision }}
+        run: node agent/run-approve.mjs

@@ -1,0 +1,12 @@
+{
+  "name": "lmh-update-agent",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.0",
+    "chrome-launcher": "^1.1.2",
+    "lighthouse": "^12.2.1"
+  }
+}

@@ -1,0 +1,57 @@
+name: LMH agent — update
+
+on:
+  repository_dispatch:
+    types: [lmh-client-update]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install site dependencies
+        run: npm ci
+
+      - name: Install agent dependencies
+        run: npm ci --prefix agent
+
+      - name: Run edit agent and open PR
+        id: agent
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          OWNER_EMAIL: ${{ secrets.OWNER_EMAIL }}
+          FROM_EMAIL: ${{ vars.FROM_EMAIL }}
+          EMAIL_FROM: ${{ github.event.client_payload.from }}
+          EMAIL_SUBJECT: ${{ github.event.client_payload.subject }}
+          EMAIL_BODY: ${{ github.event.client_payload.body }}
+          REQUEST_ID: ${{ github.event.client_payload.requestId }}
+        run: node agent/run-update.mjs
+
+      - name: Wait for preview, run Lighthouse, email owner
+        if: steps.agent.outputs.created == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          APPROVAL_SECRET: ${{ secrets.APPROVAL_SECRET }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          OWNER_EMAIL: ${{ secrets.OWNER_EMAIL }}
+          FROM_EMAIL: ${{ vars.FROM_EMAIL }}
+          BASE_BRANCH: main
+          LH_MIN_PERFORMANCE: ${{ vars.LH_MIN_PERFORMANCE }}
+          LH_MIN_ACCESSIBILITY: ${{ vars.LH_MIN_ACCESSIBILITY }}
+          LH_MIN_BEST_PRACTICES: ${{ vars.LH_MIN_BEST_PRACTICES }}
+          LH_MIN_SEO: ${{ vars.LH_MIN_SEO }}
+        run: node agent/run-checks.mjs
