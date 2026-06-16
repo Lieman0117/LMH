@@ -116,7 +116,7 @@ Begin. Read what you need, make the change, then call finish.`,
   for (let step = 0; step < MAX_STEPS; step++) {
     const resp = await client.messages.create({
       model: MODEL,
-      max_tokens: 4096,
+      max_tokens: 8192,
       system: systemPrompt(),
       tools: TOOLS,
       messages,
