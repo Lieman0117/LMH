@@ -71,6 +71,7 @@ async function main() {
   await sendEmail({
     to: process.env.OWNER_EMAIL,
     from: process.env.FROM_EMAIL,
+    replyTo: process.env.REPLY_TO_EMAIL || process.env.FROM_EMAIL,
     subject,
     text,
     apiKey: process.env.SENDGRID_API_KEY,

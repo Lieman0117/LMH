@@ -49,6 +49,7 @@ jobs:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
           OWNER_EMAIL: ${{ secrets.OWNER_EMAIL }}
           FROM_EMAIL: ${{ vars.FROM_EMAIL }}
+          REPLY_TO_EMAIL: ${{ vars.REPLY_TO_EMAIL }}
           BASE_BRANCH: main
           LH_MIN_PERFORMANCE: ${{ vars.LH_MIN_PERFORMANCE }}
           LH_MIN_ACCESSIBILITY: ${{ vars.LH_MIN_ACCESSIBILITY }}
