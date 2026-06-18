@@ -381,6 +381,154 @@
 }
 
 /*-- -------------------------- -->
+<---       Add-On Services      -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    .cs-addons-section {
+        padding: var(--sectionPadding);
+        background-color: #f7f9f8;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1060/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: (48/16rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .cs-addons-list {
+            width: 100%;
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: (24/16rem);
+        }
+
+        .cs-addon-card {
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 3px solid var(--primary);
+            border-radius: (10/16rem);
+            padding: clamp(1.75rem, 4vw, 2.5rem);
+            display: flex;
+            flex-direction: column;
+            gap: (20/16rem);
+            position: relative;
+
+            &.cs-addon-card--highlight {
+                border-top-color: var(--secondary);
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            }
+        }
+
+        .cs-addon-badge {
+            position: absolute;
+            top: (16/16rem);
+            right: (16/16rem);
+            background-color: var(--secondary);
+            color: var(--bodyTextColorWhite);
+            font-size: (11/16rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: (4/16rem) (10/16rem);
+            border-radius: (4/16rem);
+        }
+
+        .cs-addon-header {
+            display: flex;
+            flex-direction: column;
+            gap: (8/16rem);
+        }
+
+        .cs-addon-price-block {
+            display: flex;
+            align-items: flex-start;
+            gap: (3/16rem);
+            line-height: 1;
+        }
+
+        .cs-addon-dollar {
+            font-size: (20/16rem);
+            font-weight: 700;
+            color: var(--headerColor);
+            margin-top: (6/16rem);
+        }
+
+        .cs-addon-price {
+            font-size: (52/16rem);
+            font-weight: 900;
+            color: var(--headerColor);
+            line-height: 1;
+        }
+
+        .cs-addon-per {
+            font-size: (16/16rem);
+            color: var(--bodyTextColor);
+            align-self: flex-end;
+            margin-bottom: (6/16rem);
+        }
+
+        .cs-addon-name {
+            font-size: (18/16rem);
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: block;
+        }
+
+        .cs-addon-desc {
+            font-size: var(--bodyFontSize);
+            line-height: 1.6em;
+            color: var(--bodyTextColor);
+            margin: 0;
+        }
+
+        .cs-addon-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: (10/16rem);
+            margin-top: (4/16rem);
+        }
+
+        .cs-addon-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: (10/16rem);
+            font-size: var(--bodyFontSize);
+            color: var(--bodyTextColor);
+            line-height: 1.4em;
+        }
+
+        .cs-check-icon {
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: (2/16rem);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .cs-addons-section {
+        .cs-addons-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+/*-- -------------------------- -->
 <---    FAQ Accordion (details) -->
 <--- -------------------------- -*/
 
