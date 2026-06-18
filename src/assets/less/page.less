@@ -285,6 +285,9 @@
         .cs-content {
             text-align: center;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .cs-no-fee {
@@ -380,6 +383,22 @@
     }
 }
 
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .cs-pricing-section {
+        .cs-content {
+            text-align: center;
+            align-items: center;
+        }
+
+        .cs-title,
+        .cs-topper,
+        .cs-text {
+            text-align: center;
+        }
+    }
+}
+
 /*-- -------------------------- -->
 <---       Add-On Services      -->
 <--- -------------------------- -*/
@@ -402,6 +421,9 @@
         .cs-content {
             text-align: center;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .cs-addons-list {
@@ -524,6 +546,22 @@
     .cs-addons-section {
         .cs-addons-list {
             grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    .cs-addons-section {
+        .cs-content {
+            text-align: center;
+            align-items: center;
+        }
+
+        .cs-title,
+        .cs-topper,
+        .cs-text {
+            text-align: center;
         }
     }
 }
